@@ -1,5 +1,7 @@
-import 'package:akafitness/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
+
+import './screens/auth_screen.dart';
+import './screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: AuthScreen(),
-      routes: {},
+      routes: {
+        AuthScreen.routeName: (context) => AuthScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
+      },
     );
   }
 }

@@ -1,8 +1,12 @@
-import 'package:akafitness/widgets/custom_text_field.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
+import './home_screen.dart';
+
+import '../widgets/custom_text_field.dart';
 
 class AuthScreen extends StatelessWidget {
+  static const routeName = '/auth';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,10 +73,14 @@ class AuthScreen extends StatelessWidget {
                           ],
                         ),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, HomeScreen.routeName);
+                          },
                           child: Text(
                             'Login',
                             style: TextStyle(
+                              fontSize: 22,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),

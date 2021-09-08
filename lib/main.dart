@@ -1,4 +1,4 @@
-import 'package:akafitness/screen/auth_screen.dart';
+import 'package:akafitness/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Aka Fitness',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

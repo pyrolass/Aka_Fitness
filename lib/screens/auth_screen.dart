@@ -1,3 +1,4 @@
+import 'package:akafitness/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -75,7 +76,7 @@ class AuthScreen extends StatelessWidget {
                         child: TextButton(
                           onPressed: () {
                             Navigator.pushReplacementNamed(
-                                context, HomeScreen.routeName);
+                                context, TabScreen.routeName);
                           },
                           child: Text(
                             'Login',

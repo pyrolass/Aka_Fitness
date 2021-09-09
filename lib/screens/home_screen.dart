@@ -1,3 +1,5 @@
+import 'package:akafitness/widgets/profile_card.dart';
+import 'package:akafitness/widgets/workout_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -8,18 +10,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorite',
-          ),
-        ],
-      ),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -47,105 +37,30 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.only(
-              top: 25,
-              left: 8,
-              right: 8,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 5, right: 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ProfileCard(),
+            SizedBox(
+              height: 30,
             ),
-            padding: EdgeInsets.all(15),
-            height: MediaQuery.of(context).size.height / 4,
-            width: double.maxFinite,
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(229, 49, 35, 1),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  Icons.bubble_chart,
-                  size: 40,
-                  color: Colors.white,
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
                 ),
-                Text(
-                  'Hi Hamno',
-                  style: TextStyle(
-                    fontSize: 26,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  'Welcome Back',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 26,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: 20,
-              left: 20,
-              right: 20,
-              bottom: 5,
-            ),
-            child: Text(
-              'Categories',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 26,
+                itemBuilder: (context, index) {
+                  return WorkoutItems();
+                },
+                itemCount: 10,
               ),
             ),
-          ),
-          Expanded(
-            child: GridView.count(
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              crossAxisCount: 2,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text("He'd have you all unravel at the"),
-                  color: Colors.teal[100],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text('Heed not the rabble'),
-                  color: Colors.teal[200],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text('Sound of screams but the'),
-                  color: Colors.teal[300],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text('Who scream'),
-                  color: Colors.teal[400],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text('Revolution is coming...'),
-                  color: Colors.teal[500],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text('Revolution, they...'),
-                  color: Colors.teal[600],
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:akafitness/screens/auth_screen.dart';
+import 'package:akafitness/screens/favorite_screen.dart';
 import 'package:akafitness/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class _TabScreenState extends State<TabScreen> {
         controller: _controller,
         children: [
           HomeScreen(),
-          AuthScreen(),
+          FavoriteScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -1,10 +1,13 @@
-import 'package:akafitness/models/body_items.dart';
-import 'package:akafitness/widgets/profile_card.dart';
-import 'package:akafitness/widgets/body_parts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+
+import './auth_screen.dart';
+
+import '../models/body_items.dart';
+import '../widgets/profile_card.dart';
+import '../widgets/body_parts.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -24,7 +27,10 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Color.fromRGBO(229, 49, 35, 1),
         leading: IconButton(
-          onPressed: () {},
+          color: Colors.black,
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, AuthScreen.routeName);
+          },
           icon: Icon(
             Icons.logout_outlined,
             size: 30,
@@ -32,6 +38,7 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
+            color: Colors.black,
             onPressed: () {},
             icon: Icon(
               Icons.notifications_none,

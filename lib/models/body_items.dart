@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class BodyItems with ChangeNotifier {
   String title;
@@ -10,11 +9,11 @@ class BodyItemsProvider with ChangeNotifier {
   List<BodyItems> _data = [
     BodyItems(title: 'Chest'),
     BodyItems(title: 'Leg'),
-    BodyItems(title: 'Triseps'),
+    BodyItems(title: 'Triceps'),
     BodyItems(title: 'Back'),
-    BodyItems(title: 'Biseps'),
+    BodyItems(title: 'Biceps'),
     BodyItems(title: 'Neck'),
-    BodyItems(title: 'Abs'),
+    BodyItems(title: 'Core'),
   ];
 
   List<BodyItems> get data {

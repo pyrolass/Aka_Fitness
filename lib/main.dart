@@ -1,13 +1,14 @@
-import 'package:akafitness/models/body_items.dart';
-import 'package:akafitness/models/workouts_items.dart';
-import 'package:akafitness/screens/favorite_screen.dart';
-import 'package:akafitness/screens/tab_screen.dart';
-import 'package:akafitness/screens/workout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './screens/auth_screen.dart';
 import './screens/home_screen.dart';
+import './screens/favorite_screen.dart';
+import './screens/tab_screen.dart';
+import './screens/workout_screen.dart';
+
+import './models/body_items.dart';
+import './models/workouts_items.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Aka Fitness',
         theme: ThemeData(
-          canvasColor: Colors.black,
+          primaryColor: Color.fromRGBO(229, 49, 35, 1),
         ),
         home: AuthScreen(),
         routes: {

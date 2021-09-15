@@ -1,8 +1,6 @@
-import 'package:akafitness/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-
-import './home_screen.dart';
+import './tab_screen.dart';
 
 import '../widgets/custom_text_field.dart';
 
@@ -63,7 +61,7 @@ class AuthScreen extends StatelessWidget {
                       Container(
                         height: MediaQuery.of(context).size.height / 15,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(229, 49, 35, 1),
+                          color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(

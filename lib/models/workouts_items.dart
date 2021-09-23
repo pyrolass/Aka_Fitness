@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 
 class WorkoutItems with ChangeNotifier {
   String title;
-  WorkoutItems({@required this.title});
+  WorkoutItems(this.title);
 }
 
 class WorkoutItemsProvider with ChangeNotifier {
   List<WorkoutItems> _data = [
-    WorkoutItems(title: 'Chest Press'),
-    WorkoutItems(title: 'Chest Press Upper'),
-    WorkoutItems(title: 'Chest Press Lower'),
-    WorkoutItems(title: 'Chest Press Wide'),
+    WorkoutItems('Barbell Bench Press'),
+    WorkoutItems('Dumbbell Bench Press'),
+    WorkoutItems('Incline Bench Press'),
+    WorkoutItems('Decline Press'),
+    WorkoutItems('Machine Chest Press'),
+    WorkoutItems('Push-Up'),
+    WorkoutItems('Dip'),
+    WorkoutItems('Chest Fly'),
+    WorkoutItems('Dumbbell Pull-Over'),
+    WorkoutItems('Machine Fly'),
   ];
 
   List<WorkoutItems> _filteredData = [];

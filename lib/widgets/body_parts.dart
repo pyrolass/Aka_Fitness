@@ -14,6 +14,14 @@ class BodyPartsWorkouts extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 3,
+              spreadRadius: 3,
+              offset: Offset(3, 3),
+            )
+          ],
         ),
         padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.only(bottom: 8),

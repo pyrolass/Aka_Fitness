@@ -17,44 +17,42 @@ class WorkoutScreen extends StatelessWidget {
         title: Text('workout'),
         backgroundColor: Color.fromRGBO(229, 49, 35, 1),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
-        child: ListView(
-          children: [
-            SearchField(
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  prefixIcon: Icon(Icons.search_rounded),
-                  border: InputBorder.none,
-                ),
-                onChanged: (value) => {
-                  Provider.of<WorkoutItemsProvider>(context, listen: false)
-                      .searchItem(value)
-                },
+      body: ListView(
+        children: [
+          SearchField(
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                prefixIcon: Icon(Icons.search_rounded),
+                border: InputBorder.none,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 5,
-                  crossAxisSpacing: 15,
-                  childAspectRatio: 2.5 / 3),
-              itemBuilder: (context, index) {
-                return ChangeNotifierProvider.value(
-                  value: _data[index],
-                  child: Workouts(),
-                );
+              onChanged: (value) => {
+                Provider.of<WorkoutItemsProvider>(context, listen: false)
+                    .searchItem(value)
               },
-              itemCount: _data.length,
             ),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          GridView.builder(
+            padding: EdgeInsets.all(10),
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 5,
+                crossAxisSpacing: 15,
+                childAspectRatio: 2.5 / 3),
+            itemBuilder: (context, index) {
+              return ChangeNotifierProvider.value(
+                value: _data[index],
+                child: Workouts(),
+              );
+            },
+            itemCount: _data.length,
+          ),
+        ],
       ),
     );
   }

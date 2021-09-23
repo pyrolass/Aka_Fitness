@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (cntx) => WorkoutItemsProvider(),
-        )
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

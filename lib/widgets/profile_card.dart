@@ -6,13 +6,22 @@ class ProfileCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         top: 25,
+        right: 10,
+        left: 10,
       ),
       padding: EdgeInsets.all(15),
-      height: MediaQuery.of(context).size.height / 4,
-      width: double.maxFinite,
+      height: MediaQuery.of(context).size.height * 0.25,
       decoration: BoxDecoration(
         color: Color.fromRGBO(229, 49, 35, 1),
         borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 5,
+            spreadRadius: 5,
+            offset: Offset(5, 5),
+          )
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -37,7 +37,7 @@ class _AuthScreenState extends State<AuthScreen> {
       body: Column(
         children: [
           Expanded(
-            child: Image.asset('assets/aka_logo.png'),
+            child: Image.asset('assets/images/aka_logo.png'),
           ),
           Expanded(
             flex: 2,

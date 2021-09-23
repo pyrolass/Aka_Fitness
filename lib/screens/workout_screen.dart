@@ -35,15 +35,10 @@ class WorkoutScreen extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          GridView.builder(
+          ListView.builder(
             padding: EdgeInsets.all(10),
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 5,
-                crossAxisSpacing: 15,
-                childAspectRatio: 2.5 / 3),
             itemBuilder: (context, index) {
               return ChangeNotifierProvider.value(
                 value: _data[index],

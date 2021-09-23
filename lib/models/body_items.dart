@@ -4,14 +4,20 @@ import './workouts_items.dart';
 
 class BodyItems with ChangeNotifier {
   String title;
+  String image;
   List<WorkoutItems> workoutItems;
-  BodyItems({@required this.title, @required this.workoutItems});
+  BodyItems({
+    @required this.title,
+    @required this.workoutItems,
+    @required this.image,
+  });
 }
 
 class BodyItemsProvider with ChangeNotifier {
   List<BodyItems> _data = [
     BodyItems(
       title: 'Chest',
+      image: 'assets/images/chest.jpg',
       workoutItems: [
         WorkoutItems('Barbell Bench Press'),
         WorkoutItems('Dumbbell Bench Press'),
@@ -27,6 +33,7 @@ class BodyItemsProvider with ChangeNotifier {
     ),
     BodyItems(
       title: 'Leg',
+      image: 'assets/images/leg.jpg',
       workoutItems: [
         WorkoutItems('Leg Press'),
         WorkoutItems('Leg Curl'),
@@ -47,6 +54,7 @@ class BodyItemsProvider with ChangeNotifier {
     ),
     BodyItems(
       title: 'Triceps',
+      image: 'assets/images/triceps.jpg',
       workoutItems: [
         WorkoutItems('Close-Grip Bench Press'),
         WorkoutItems('Decline Triceps Extension'),
@@ -66,7 +74,25 @@ class BodyItemsProvider with ChangeNotifier {
       ],
     ),
     BodyItems(
+      title: 'Shoulders',
+      image: 'assets/images/shoulder.jpg',
+      workoutItems: [
+        WorkoutItems('Dumbbell Front Raise'),
+        WorkoutItems('Dumbbell Lateral Raise'),
+        WorkoutItems('Reverse Fly'),
+        WorkoutItems('Seated Military Press'),
+        WorkoutItems('Shoulder Press'),
+        WorkoutItems('Standing Dumbbell Shoulder Press'),
+        WorkoutItems('Plank Dumbbell Shoulder Raise'),
+        WorkoutItems('Barbell Overhead Press'),
+        WorkoutItems('High Pull'),
+        WorkoutItems('Shoulder Shrug'),
+        WorkoutItems('Farmer\'s Walk'),
+      ],
+    ),
+    BodyItems(
       title: 'Back',
+      image: 'assets/images/back.jpg',
       workoutItems: [
         WorkoutItems('Deadlift'),
         WorkoutItems('Bent-Over Row'),
@@ -82,6 +108,7 @@ class BodyItemsProvider with ChangeNotifier {
     ),
     BodyItems(
       title: 'Biceps',
+      image: 'assets/images/biceps.jpg',
       workoutItems: [
         WorkoutItems('Alternating Incline Dumbbell Curl'),
         WorkoutItems('Seated Alternating Hammer Curl'),
@@ -100,6 +127,7 @@ class BodyItemsProvider with ChangeNotifier {
     ),
     BodyItems(
       title: 'Core',
+      image: 'assets/images/core.jpg',
       workoutItems: [
         WorkoutItems('Hollowman'),
         WorkoutItems('High Plank'),

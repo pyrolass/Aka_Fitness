@@ -22,22 +22,19 @@ class Workouts extends StatelessWidget {
             )
           ],
         ),
-        padding: const EdgeInsets.all(8),
-        margin: const EdgeInsets.only(bottom: 8),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        padding: const EdgeInsets.all(20),
+        margin: const EdgeInsets.only(bottom: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              Icons.ac_unit,
-            ),
-            AutoSizeText(
+            Text(
               _data.title,
-              maxLines: 1,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
-            )
+            ),
+            Icon(Icons.favorite_outline),
           ],
         ),
       ),

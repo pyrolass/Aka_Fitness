@@ -28,8 +28,10 @@ class BodyPartsWorkouts extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Icon(
-              Icons.ac_unit,
+            Expanded(
+              child: Image.asset(
+                _data.image,
+              ),
             ),
             Text(
               _data.title,

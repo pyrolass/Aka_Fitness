@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 
 class WorkoutItems with ChangeNotifier {
   String title;
-  WorkoutItems({@required this.title});
+  bool isFavorite = false;
+  WorkoutItems({@required this.title, this.isFavorite});
 
-  factory WorkoutItems.fromJson(Map<String, dynamic> json) =>
-      WorkoutItems(title: json["title"]);
+  factory WorkoutItems.fromJson(Map<String, dynamic> json) => WorkoutItems(
+        title: json["title"],
+        isFavorite: json["isFavorite"],
+      );
+
+  void togglefavoriteStatus() {
+    isFavorite = !isFavorite;
+    //we use notify to rebuild the widget
+    notifyListeners();
+  }
 }
 
 class WorkoutItemsProvider with ChangeNotifier {
-  List<WorkoutItems> _data = [WorkoutItems(title: 'test')];
+  List<WorkoutItems> _data = [];
 
   List<WorkoutItems> _filteredData = [];
 
@@ -20,7 +29,12 @@ class WorkoutItemsProvider with ChangeNotifier {
   void addData(List<WorkoutItems> data) {
     List<WorkoutItems> newData = data;
     _data = newData;
-    print(_data[0].title);
+    notifyListeners();
+  }
+
+  void resetData() {
+    _data = [];
+    _filteredData = [];
     notifyListeners();
   }
 

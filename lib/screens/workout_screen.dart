@@ -1,4 +1,4 @@
-import 'package:akafitness/models/get_items.dart';
+import 'package:akafitness/models/mongo_server.dart';
 import 'package:akafitness/models/workouts_items.dart';
 import 'package:akafitness/widgets/searchfield.dart';
 import 'package:akafitness/widgets/wourkouts.dart';
@@ -22,7 +22,15 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     List<WorkoutItems> _data = Provider.of<WorkoutItemsProvider>(context).data;
     return Scaffold(
       appBar: AppBar(
-        title: Text('workout'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Provider.of<WorkoutItemsProvider>(context, listen: false)
+                .resetData();
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('workouts'),
         backgroundColor: Color.fromRGBO(229, 49, 35, 1),
       ),
       body: ListView(

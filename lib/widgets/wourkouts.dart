@@ -1,4 +1,4 @@
-import 'package:akafitness/models/get_items.dart';
+import 'package:akafitness/models/mongo_server.dart';
 import 'package:akafitness/models/workouts_items.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +6,11 @@ import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
 class Workouts extends StatelessWidget {
+  MongoServer test = MongoServer();
   @override
   Widget build(BuildContext context) {
     WorkoutItems _data = Provider.of<WorkoutItems>(context);
+
     return GestureDetector(
       child: Container(
         decoration: BoxDecoration(
@@ -35,7 +37,15 @@ class Workouts extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Icon(Icons.favorite_outline),
+            IconButton(
+              onPressed: () {
+                test.toggleFavorite(context, 'chest', _data.title);
+              },
+              icon: Icon(
+                _data.isFavorite ? Icons.favorite : Icons.favorite_outline,
+              ),
+              iconSize: MediaQuery.of(context).size.height / 30,
+            ),
           ],
         ),
       ),

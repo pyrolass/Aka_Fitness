@@ -1,3 +1,4 @@
+import 'package:akafitness/models/get_items.dart';
 import 'package:akafitness/models/workouts_items.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,7 @@ class Workouts extends StatelessWidget {
           ],
         ),
       ),
+      onTap: () {},
     );
   }
 }

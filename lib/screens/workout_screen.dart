@@ -1,3 +1,4 @@
+import 'package:akafitness/models/get_items.dart';
 import 'package:akafitness/models/workouts_items.dart';
 import 'package:akafitness/widgets/searchfield.dart';
 import 'package:akafitness/widgets/wourkouts.dart';
@@ -6,11 +7,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class WorkoutScreen extends StatelessWidget {
+class WorkoutScreen extends StatefulWidget {
   static String routeName = '/workout-screen';
 
   @override
+  State<WorkoutScreen> createState() => _WorkoutScreenState();
+}
+
+class _WorkoutScreenState extends State<WorkoutScreen> {
+  @override
   Widget build(BuildContext context) {
+    // final title = ModalRoute.of(context).settings.arguments as String;
+
     List<WorkoutItems> _data = Provider.of<WorkoutItemsProvider>(context).data;
     return Scaffold(
       appBar: AppBar(

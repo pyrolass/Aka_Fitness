@@ -1,4 +1,5 @@
 import 'package:akafitness/models/body_items.dart';
+import 'package:akafitness/models/get_items.dart';
 import 'package:akafitness/screens/workout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
 class BodyPartsWorkouts extends StatelessWidget {
+  GetItems test = GetItems();
   @override
   Widget build(BuildContext context) {
     BodyItems _data = Provider.of<BodyItems>(context);
@@ -44,7 +46,10 @@ class BodyPartsWorkouts extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.pushNamed(context, WorkoutScreen.routeName);
+        Navigator.pushNamed(context, WorkoutScreen.routeName,
+            arguments: _data.title);
+
+        GetItems().getAllItems(_data.title.toLowerCase());
       },
     );
   }

@@ -38,7 +38,6 @@ class MyApp extends StatelessWidget {
           HomeScreen.routeName: (context) => HomeScreen(),
           TabScreen.routeName: (context) => TabScreen(),
           FavoriteScreen.routeName: (context) => FavoriteScreen(),
-          WorkoutScreen.routeName: (context) => WorkoutScreen(),
         },
       ),
     );

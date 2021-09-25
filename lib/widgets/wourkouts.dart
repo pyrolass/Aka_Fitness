@@ -1,12 +1,11 @@
 import 'package:akafitness/models/mongo_server.dart';
 import 'package:akafitness/models/workouts_items.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
 class Workouts extends StatelessWidget {
-  MongoServer test = MongoServer();
+  final MongoServer test = MongoServer();
   @override
   Widget build(BuildContext context) {
     WorkoutItems _data = Provider.of<WorkoutItems>(context);

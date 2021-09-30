@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './workouts_items.dart';
-
 class BodyItems with ChangeNotifier {
   String title;
   String image;

@@ -1,8 +1,7 @@
-import 'dart:convert';
-
-import 'package:akafitness/models/workouts_items.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:provider/provider.dart';
+
+import './workouts_items.dart';
 
 class MongoServer {
   getAllItems(context, String bodyPart) async {

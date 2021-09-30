@@ -53,9 +53,12 @@ class _BodyPartsWorkoutsState extends State<BodyPartsWorkouts> {
         ),
       ),
       onTap: () {
-        MongoServer().getAllItems(context, _data.title.toLowerCase());
-        Navigator.pushNamed(context, WorkoutScreen.routeName,
-            arguments: _data.title);
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => WorkoutScreen(
+                      title: _data.title,
+                    )));
       },
     );
   }

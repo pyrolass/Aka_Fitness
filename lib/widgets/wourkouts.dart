@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 
 class Workouts extends StatelessWidget {
   final MongoServer test = MongoServer();
+  final String title;
+  Workouts(@required this.title);
   @override
   Widget build(BuildContext context) {
     WorkoutItems _data = Provider.of<WorkoutItems>(context);
@@ -38,7 +40,12 @@ class Workouts extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                test.toggleFavorite(context, 'chest', _data.title);
+                //print(_data.title);
+                test.toggleFavorite(
+                  context,
+                  title.toLowerCase(),
+                  _data.title,
+                );
               },
               icon: Icon(
                 _data.isFavorite ? Icons.favorite : Icons.favorite_outline,

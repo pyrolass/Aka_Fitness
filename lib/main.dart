@@ -5,8 +5,6 @@ import './screens/auth_screen.dart';
 import './screens/home_screen.dart';
 import './screens/favorite_screen.dart';
 import './screens/tab_screen.dart';
-import './screens/workout_screen.dart';
-
 import './models/body_items.dart';
 import './models/workouts_items.dart';
 

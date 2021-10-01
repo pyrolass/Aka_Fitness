@@ -39,7 +39,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
             Navigator.pop(context);
           },
         ),
-        title: Text('workouts'),
+        title: Text(widget.title),
         backgroundColor: Color.fromRGBO(229, 49, 35, 1),
       ),
       body: FutureBuilder(
@@ -72,7 +72,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                     itemBuilder: (context, index) {
                       return ChangeNotifierProvider.value(
                         value: _data[index],
-                        child: Workouts(),
+                        child: Workouts(widget.title),
                       );
                     },
                     itemCount: _data.length,

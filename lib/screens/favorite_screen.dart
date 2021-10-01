@@ -26,7 +26,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     List<WorkoutItems> _data = Provider.of<WorkoutItemsProvider>(context).data;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(title),

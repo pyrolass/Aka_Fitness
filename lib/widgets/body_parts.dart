@@ -1,11 +1,10 @@
-import 'package:akafitness/models/body_items.dart';
-import 'package:akafitness/models/mongo_server.dart';
-import 'package:akafitness/models/workouts_items.dart';
-import 'package:akafitness/screens/workout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-
 import 'package:provider/provider.dart';
+
+import '../models/body_items.dart';
+import '../models/mongo_server.dart';
+import '../screens/workout_screen.dart';
 
 class BodyPartsWorkouts extends StatefulWidget {
   @override
@@ -48,7 +47,7 @@ class _BodyPartsWorkoutsState extends State<BodyPartsWorkouts> {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
-            )
+            ),
           ],
         ),
       ),

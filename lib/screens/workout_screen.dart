@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 
 class WorkoutScreen extends StatefulWidget {
   static String routeName = '/workout-screen';
-  String title;
+  final String title;
   WorkoutScreen({@required this.title});
   @override
   State<WorkoutScreen> createState() => _WorkoutScreenState();

@@ -1,3 +1,4 @@
+import 'package:akafitness/models/mongo_server.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -71,6 +72,12 @@ class HomeScreen extends StatelessWidget {
             itemCount: _data.length,
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          MongoServer data = MongoServer();
+          data.getFavoriteItems(context);
+        },
       ),
     );
   }

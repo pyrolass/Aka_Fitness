@@ -26,6 +26,10 @@ class WorkoutItemsProvider with ChangeNotifier {
     return _filteredData.isEmpty ? [..._data] : [..._filteredData];
   }
 
+  List<WorkoutItems> get onlyFavorites {
+    return _data.where((element) => element.isFavorite == true);
+  }
+
   void addData(List<WorkoutItems> data) {
     List<WorkoutItems> newData = data;
     _data = newData;

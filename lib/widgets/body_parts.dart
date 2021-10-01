@@ -54,11 +54,13 @@ class _BodyPartsWorkoutsState extends State<BodyPartsWorkouts> {
       ),
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => WorkoutScreen(
-                      title: _data.title,
-                    )));
+          context,
+          MaterialPageRoute(
+            builder: (context) => WorkoutScreen(
+              title: _data.title,
+            ),
+          ),
+        );
       },
     );
   }

@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
 class Workouts extends StatelessWidget {
-  final MongoServer test = MongoServer();
+  final MongoServer server = MongoServer();
   final String title;
   Workouts(@required this.title);
   @override
@@ -41,7 +41,7 @@ class Workouts extends StatelessWidget {
             IconButton(
               onPressed: () {
                 //print(_data.title);
-                test.toggleFavorite(
+                server.toggleFavorite(
                   context,
                   title.toLowerCase(),
                   _data.title,

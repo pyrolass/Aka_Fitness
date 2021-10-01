@@ -43,46 +43,46 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         backgroundColor: Color.fromRGBO(229, 49, 35, 1),
       ),
       body: FutureBuilder(
-          future: getData,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return ListView(
-                children: [
-                  SearchField(
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search',
-                        prefixIcon: Icon(Icons.search_rounded),
-                        border: InputBorder.none,
-                      ),
-                      onChanged: (value) => {
-                        Provider.of<WorkoutItemsProvider>(context,
-                                listen: false)
-                            .searchItem(value)
-                      },
+        future: getData,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView(
+              children: [
+                SearchField(
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: Icon(Icons.search_rounded),
+                      border: InputBorder.none,
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListView.builder(
-                    padding: EdgeInsets.all(10),
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return ChangeNotifierProvider.value(
-                        value: _data[index],
-                        child: Workouts(widget.title),
-                      );
+                    onChanged: (value) => {
+                      Provider.of<WorkoutItemsProvider>(context, listen: false)
+                          .searchItem(value)
                     },
-                    itemCount: _data.length,
                   ),
-                ],
-              );
-            } else {
-              return Center(child: CircularProgressIndicator());
-            }
-          }),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                ListView.builder(
+                  padding: EdgeInsets.all(10),
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return ChangeNotifierProvider.value(
+                      value: _data[index],
+                      child: Workouts(widget.title),
+                    );
+                  },
+                  itemCount: _data.length,
+                ),
+              ],
+            );
+          } else {
+            return Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
     );
   }
 }

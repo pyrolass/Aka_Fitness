@@ -1,10 +1,28 @@
 const Aka = require('./../models/akaModel');
 const { query } = require('express');
+const AKA = require('./../models/akaModel');
 
 
 exports.getAllData = async (req, res) => {
     try {
         const aka = await Aka.find();
+        res.json({
+            lenght: aka.length,
+            data: aka
+        });
+    }
+    catch (err) {
+        res.json({
+            status: err
+        });
+    }
+}
+
+exports.getWorkout = async (req, res) => {
+    try {
+        const aka = await Aka.findOne({
+            workout: req.params.id
+        })
         res.json({
             lenght: aka.length,
             data: aka

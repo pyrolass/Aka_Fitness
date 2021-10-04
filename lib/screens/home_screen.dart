@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           MongoServer data = MongoServer();
-          data.getFavoriteItems(context);
+          data.getAllWorkouts(context, 'chest');
         },
       ),
     );

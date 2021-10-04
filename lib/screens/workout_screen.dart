@@ -20,7 +20,8 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   @override
   void initState() {
     setState(() {
-      getData = MongoServer().getAllItems(context, widget.title.toLowerCase());
+      getData =
+          MongoServer().getAllWorkouts(context, widget.title.toLowerCase());
     });
     super.initState();
   }

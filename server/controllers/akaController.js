@@ -20,12 +20,16 @@ exports.getAllData = async (req, res) => {
 
 exports.getWorkout = async (req, res) => {
     try {
-        const aka = await Aka.findOne({
-            workout: req.params.id
-        })
+        const aka = await Aka.aggregate([
+            {
+                $match: {
+                    workout: req.params.workout
+                },
+            }
+        ])
         res.json({
             lenght: aka.length,
-            data: aka
+            meta: aka
         });
     }
     catch (err) {
@@ -48,7 +52,6 @@ exports.getFavotiteData = async (req, res) => {
             lenght: aka.length,
             data: data
         })
-
     }
     catch (err) {
         res.json({
@@ -56,3 +59,4 @@ exports.getFavotiteData = async (req, res) => {
         });
     }
 }
+

@@ -1,43 +1,27 @@
+import 'dart:convert';
+
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:provider/provider.dart';
-
+import 'package:http/http.dart' as http;
 import './workouts_items.dart';
 
 class MongoServer {
-  Future<List<WorkoutItems>> getAllItems(context, String bodyPart) async {
-    // try {
-    var db = await Db.create(
-        "mongodb://Pyro:morningstar99@cluster0-shard-00-00.awbc5.mongodb.net:27017,cluster0-shard-00-01.awbc5.mongodb.net:27017,cluster0-shard-00-02.awbc5.mongodb.net:27017/aka?ssl=true&replicaSet=atlas-13da2a-shard-0&authSource=admin&retryWrites=true&w=majority");
-    await db.open();
-    //   var coll = db.collection(bodyPart);
-    //   var data =
-    //       await coll.find().map((el) => WorkoutItems.fromJson(el)).toList();
-
-    //   Provider.of<WorkoutItemsProvider>(context, listen: false).addData(data);
-    //   print(data);
-    //   return data;
-    // } catch (err) {
-    //   print(err);
-    // }
-    try {
-      var coll = db.collection('workouts');
-      var data = await coll
-          .find({"workout": bodyPart.toLowerCase()})
-          .map((el) => el['data'])
-          .toList();
+  Future<List<WorkoutItems>> getAllWorkouts(context, bodyPart) async {
+    final response =
+        await http.get(Uri.parse('http://localhost:3000/api/v1/aka/$bodyPart'));
+    if (response.statusCode == 200) {
+      var data = json.decode(response.body)['meta'][0]['data'];
       List<WorkoutItems> workouts = [];
       data.forEach(
-        (element) {
-          for (int i = 0; i < element.length; i++) {
-            workouts.add(WorkoutItems.fromJson(element[i]));
-          }
-        },
+        (el) => workouts.add(
+          WorkoutItems.fromJson(el),
+        ),
       );
       Provider.of<WorkoutItemsProvider>(context, listen: false)
           .addData(workouts);
       return workouts;
-    } catch (err) {
-      print(err);
+    } else {
+      throw Exception('Failed to load album');
     }
   }
 

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class Workouts extends StatelessWidget {
   final MongoServer server = MongoServer();
   final String title;
-  Workouts(@required this.title);
+  Workouts(this.title);
   @override
   Widget build(BuildContext context) {
     WorkoutItems _data = Provider.of<WorkoutItems>(context);

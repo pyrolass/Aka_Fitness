@@ -5,8 +5,8 @@ class BodyItems with ChangeNotifier {
   String image;
 
   BodyItems({
-    @required this.title,
-    @required this.image,
+    required this.title,
+    required this.image,
   });
 }
 

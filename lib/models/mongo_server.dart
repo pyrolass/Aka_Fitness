@@ -51,7 +51,7 @@ class MongoServer {
 
       return workouts;
     } catch (err) {
-      print(err);
+      throw (err);
     }
   }
 

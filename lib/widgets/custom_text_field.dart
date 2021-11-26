@@ -4,19 +4,19 @@ class CustomTextField extends StatelessWidget {
   final IconData prefixIcon;
   final String labelText;
   final bool isPass;
-  final Function(String value) onChanged;
-  final Function(String value) onSubmitted;
+  late final Function(String value)? onChanged;
+  final Function(String value)? onSubmitted;
   final TextEditingController controller;
   final TextInputAction inputAction;
 
   CustomTextField({
-    @required this.labelText,
-    @required this.prefixIcon,
+    required this.labelText,
+    required this.prefixIcon,
     this.onChanged,
     this.onSubmitted,
-    @required this.controller,
-    @required this.inputAction,
-    @required this.isPass,
+    required this.controller,
+    required this.inputAction,
+    required this.isPass,
   });
   @override
   Widget build(BuildContext context) {

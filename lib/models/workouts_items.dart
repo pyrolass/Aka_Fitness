@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class WorkoutItems with ChangeNotifier {
   String title;
-  bool isFavorite = false;
-  WorkoutItems({@required this.title, this.isFavorite});
+  bool isFavorite;
+  WorkoutItems({required this.title, this.isFavorite = false});
 
   factory WorkoutItems.fromJson(Map<String, dynamic> json) => WorkoutItems(
         title: json["title"],
@@ -27,7 +27,11 @@ class WorkoutItemsProvider with ChangeNotifier {
   }
 
   List<WorkoutItems> get onlyFavorites {
-    return _data.where((element) => element.isFavorite == true);
+    return _data
+        .where(
+          (element) => element.isFavorite == true,
+        )
+        .toList();
   }
 
   void addData(List<WorkoutItems> data) {

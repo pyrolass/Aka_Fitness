@@ -10,13 +10,13 @@ import 'package:provider/provider.dart';
 class WorkoutScreen extends StatefulWidget {
   static String routeName = '/workout-screen';
   final String title;
-  WorkoutScreen({@required this.title});
+  WorkoutScreen({required this.title});
   @override
   State<WorkoutScreen> createState() => _WorkoutScreenState();
 }
 
 class _WorkoutScreenState extends State<WorkoutScreen> {
-  Future<List<WorkoutItems>> getData;
+  late Future<List<WorkoutItems>> getData;
   @override
   void initState() {
     setState(() {

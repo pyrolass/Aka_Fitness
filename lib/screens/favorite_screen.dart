@@ -14,7 +14,7 @@ class FavoriteScreen extends StatefulWidget {
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
   String title = 'favorited';
-  Future<List<WorkoutItems>> getData;
+  late Future<List<WorkoutItems>> getData;
   @override
   void initState() {
     setState(() {
